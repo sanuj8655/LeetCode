@@ -1,17 +1,18 @@
 from typing import List
-s = "tmmzuxt"
+
+s = "dvdf"
+
+
 def lengthOfLongestSubstring(s: str) -> int:
     maxl = 0
-    for ele in range(len(s)):
-        string = ""
-        length = 0
-        for ele2 in range(ele, len(s)):
-            if s[ele2] not in string:
-                string += s[ele2]
-                length += 1
-            else:
-                break
-        maxl = max(maxl, length)
+    hashmap = {}
+    l = 0
+    for r in range(len(s)):
+        ch = s[r]
+        if ch in hashmap and hashmap[ch] >= l:
+            l = hashmap[ch] + 1
+        maxl = max(maxl, r - l + 1)
+        hashmap[ch] = r
     return maxl
 
 

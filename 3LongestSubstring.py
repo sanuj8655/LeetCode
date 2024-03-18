@@ -18,6 +18,7 @@ s = "tmmzuxt"
 #         maxl = max(maxl, length)
 #     return maxl
 
+
 # Time - O(n)
 def lengthOfLongestSubstring(s: str) -> int:
     seen = {}
